@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
+    <link href="starter-template.css" rel="stylesheet"/>
+    <title>자유게시판</title>
+<!--    <link rel="stylesheet" href="css/bootstrap.css">-->
+</head>
+<body>
+  <!-- HEADER -->
+  <div th:insert="common/header.html" id="header"></div>
+  <table class="table table-hover">
+      <thead>
+      <tr>
+          <th>번호</th>
+          <th>제목</th>
+          <th>내용</th>
+          <th>작성자</th>
+          <th>작성일</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <!-- CONTENTS !-->
+      <tr th:each="MyBoardEntity : ${List}">
+          <td>
+              <span th:text="${MyBoardEntity.id}"></span>
+          </td>
+          <td>
+              <a th:href="@{'/board/write' + ${MyBoardEntity.id}}">
+                  <span th:text="${MyBoardEntity.title}"></span>
+              </a>
+          </td>
+          <td>
+              <span th:text="${MyBoardEntity.content}"></span>
+          </td>
+          <td>
+              <span th:text="${MyBoardEntity.writer}"></span>
+          </td>
+          <td>
+<!--              <span th:text="${#temporals.format(MyBoardEntity.createdDate, 'yyyy-MM-dd HH:mm')}"></span>-->
+<!--          </td>-->
+<!--      </tr>-->
+<!--      </tbody>-->
+
+  </table>
+
+
+  <a th:href="@{/board/write}">글쓰기</a>
+
+
+  <script src="js-jquery-3.1.1.js"></script>
+  <script src="js-bootstrap.js"></script>
+  <!-- FOOTER -->
+  <div th:insert="common/footer.html" id="footer"></div>
+</body>
+</html>
