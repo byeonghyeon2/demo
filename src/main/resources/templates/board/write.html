@@ -1,21 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>게시판-글쓰기</title>
+  <meta charset="UTF-8" />
+  <title>게시판 - 글쓰기</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
 </head>
 <body>
-<fieldset style="width:150">
-  <div class="layout">
-    <form action="/board/writePro" method="post">
+<header th:insert="common/header.html"></header>
+<div class="container">
+  <form action="/board/writePro" method="post">
 
-      제목<br><input type="text" name="title"><br><br>
-      이름<br><input type="text" name="writer"><br><br>
-      내용<br>
-      <textarea name="content" cols="50" rows="5" placeholder="내용을 작성해주세요"></textarea>
-      <br>
-      <button>작성</button>
-    </form>
-</fieldset>
+    <div class="form-group row">
+      <label for="inputTitle" class="col-sm-2 col-form-label"><strong>제목</strong></label>
+      <div class="col-sm-10">
+        <input type="text" name="title" class="form-control" id="inputTitle" />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputWriter" class="col-sm-2 col-form-label"><strong>작성자</strong></label>
+      <div class="col-sm-10">
+        <input type="text" name="writer" class="form-control" id="inputWriter" />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputContent" class="col-sm-2 col-form-label"><strong>내용</strong></label>
+      <div class="col-sm-10">
+        <textarea type="text" name="content" class="form-control" id="inputContent"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-auto mr-auto"></div>
+      <div class="col-auto">
+        <input class="btn btn-primary" type="submit" role="button" value="글쓰기" />
+      </div>
+    </div>
+  </form>
+</div>
 </body>
 </html>
