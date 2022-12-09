@@ -4,9 +4,6 @@ import com.example.demo.dto.BoardDto;
 import com.example.demo.entity.BoardEntity;
 import com.example.demo.repository.BoardRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

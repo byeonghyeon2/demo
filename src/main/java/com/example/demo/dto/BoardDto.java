@@ -1,6 +1,6 @@
 package com.example.demo.dto;
 
-import com.example.demo.entity.Board;
+import com.example.demo.entity.BoardEntity;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -18,8 +18,8 @@ public class BoardDto {
     private LocalDateTime createdDate;
     private LocalDateTime modifiedDate;
 
-    public Board toEntity() {
-        Board build = Board.builder()
+    public BoardEntity toEntity() {
+        BoardEntity build = BoardEntity.builder()
                 .id(id)
                 .title(title)
                 .content(content)
