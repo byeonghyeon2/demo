@@ -6,10 +6,14 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
 </head>
 <body>
+
+<!--헤더추가-->
 <header th:insert="common/header.html"></header>
+
 <div class="container">
   <table class="table">
     <thead class="thead-light">
+<!--게시판 항목-->
     <tr class="text-center">
       <th scope="col">번호</th>
       <th scope="col">제목</th>
@@ -18,6 +22,7 @@
       <th scope="col">작성일</th>
     </tr>
     </thead>
+<!--boardList parameter-->
     <tbody>
     <tr class="text-center" th:each="post : ${postList}">
       <th scope="row">
@@ -40,12 +45,25 @@
     </tr>
     </tbody>
   </table>
+
+<!--글쓰기 버튼-->
   <div class="row">
     <div class="col-auto mr-auto"></div>
     <div class="col-auto">
       <a class="btn btn-primary" th:href="@{/post}" role="button">글쓰기</a>
     </div>
   </div>
+
+<!--검색 form-->
+  <form action="search" method="GET">
+    <div class="mx-quto input-group mt-5">
+      <mx-auto>
+        <input name="keyword" type="text" class="form-control" placeholder="제목 및 내용을 입력해주세요." aria-label="search" aria-describedby="button-addon2">
+      </mx-auto>
+      <button class="btn btn-primary" type="submit" id="button">검색</button>
+    </div>
+  </form>
+
 </div>
 </body>
 </html>
