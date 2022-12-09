@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 import com.example.demo.dto.BoardDto;
-import com.example.demo.entity.Board;
 import com.example.demo.service.BoardService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -19,6 +18,13 @@ public class BoardController {
     @GetMapping("/")
     public String list(Model model) {
         List<BoardDto> boardDtoList = boardService.getBoardList();
+        model.addAttribute("postList", boardDtoList);
+        return "board/list.html";
+    }
+
+    @GetMapping("/search")
+    public String search(@RequestParam(value = "keyword") String keyword, Model model) {
+        List<BoardDto> boardDtoList = boardService.searchPosts(keyword);
         model.addAttribute("postList", boardDtoList);
         return "board/list.html";
     }
