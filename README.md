@@ -13,4 +13,4 @@ https://rebornbb.tistory.com/entry/SpringBootIntelliJOracleDB-%EA%B8%B0%EB%B3%B8
 
 https://wikidocs.net/265 (자바 기본 지식)
 
-https://blog.eomsh.com/141 (intellij merge 방법)
+https://its-easy.tistory.com/27 (intellij git 방법)
