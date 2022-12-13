@@ -39,6 +39,7 @@ public class BoardService {
                     .title(boardEntity.getTitle())
                     .content(boardEntity.getContent())
                     .writer(boardEntity.getWriter())
+                    .view(boardEntity.getView())
                     .createdDate(boardEntity.getCreatedDate())
                     .build();
             boardDtoList.add(boardDto);
@@ -57,6 +58,7 @@ public class BoardService {
                 .title(boardEntity.getTitle())
                 .content(boardEntity.getContent())
                 .writer(boardEntity.getWriter())
+                .view(boardEntity.getView())
                 .createdDate(boardEntity.getCreatedDate())
                 .build();
         return boardDto;
@@ -91,8 +93,14 @@ public class BoardService {
                 .title(boardEntity.getTitle())
                 .content(boardEntity.getContent())
                 .writer(boardEntity.getWriter())
+                .view(boardEntity.getView())
                 .createdDate(boardEntity.getCreatedDate())
                 .build();
+    }
+
+    @Transactional
+    public int updateView(Long id) {
+        return boardRepository.updateView(id);
     }
 }
 

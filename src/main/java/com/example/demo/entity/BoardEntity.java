@@ -30,6 +30,9 @@ public class BoardEntity {
     @Column(length = 40, nullable = false)
     private String writer;
 
+    @Column(columnDefinition = "integer default 0", nullable = false)
+    private int view;
+
     @CreatedDate
     @Column(updatable = false)
     private LocalDateTime createdDate;
@@ -38,11 +41,12 @@ public class BoardEntity {
     private LocalDateTime modifiedDate;
 
     @Builder
-    public BoardEntity(Long id, String title, String content, String writer) {
+    public BoardEntity(Long id, String title, String content, String writer, int view) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.writer = writer;
+        this.view = view;
     }
 
 }
