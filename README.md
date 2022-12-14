@@ -21,3 +21,5 @@ https://jink1982.tistory.com/140(for : each 설명)
 https://dev-coco.tistory.com/113?category=1032063 (조회수 추가)
 
 https://indienote.tistory.com/664(mysql properties 연동 에러 )
+
+https://jeekchic.tistory.com/2(sqlsession 못찾을때)
